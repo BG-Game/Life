@@ -29,7 +29,7 @@ export const LoginPage = () => {
 
   return (
     <div style={{
-      background: "#4682B4",
+      background: "#000", // Черный фон
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
@@ -37,15 +37,15 @@ export const LoginPage = () => {
       height: "100vh",
       width: "100vw",
       overflow: "hidden",
+      color: "white", // Белый цвет текста
     }}>
       
       <img 
         src="https://media.tenor.com/nme8dFrh7sIAAAAi/telegram-utya-telegram-duck.gif"
         alt="GIF"
         style={{
-          width: "120px",
-          height: "120px",
-          mixBlendMode: "multiply",
+          width: "130px",
+          height: "130px",
           marginBottom: "20px"
         }}
       />
@@ -61,36 +61,59 @@ export const LoginPage = () => {
         borderRadius: "10px",
         margin: "0 auto",
       }}>
-        <input type="text" placeholder="Логин" value={username} onChange={(e) => setUsername(e.target.value)} required style={{
-          width: "100%",
+        <input type="text" placeholder="@username" value={username} onChange={(e) => setUsername(e.target.value)} required style={{
+          width: "92%",
           padding: "12px",
           marginBottom: "10px",
-          borderRadius: "5px",
+          borderRadius: "20px",
           border: "none",
-          fontSize: "16px"
-        }} />
-        <input type="password" placeholder="Пароль" value={password} onChange={(e) => setPassword(e.target.value)} required style={{
-          width: "100%",
+          backgroundColor: "#333",
+          color: "white",
+          fontSize: "16px",
+          outline: "none", // Убираем стандартную обводку
+    
+        }}
+        onFocus={(e) => (e.target.style.border = "2px solid #4B0082")}
+        onBlur={(e) => (e.target.style.border = "none")} />
+        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required style={{
+          width: "92%",
           padding: "12px",
           marginBottom: "10px",
-          borderRadius: "5px",
+          borderRadius: "20px",
           border: "none",
-          fontSize: "16px"
-        }} />
+          backgroundColor: "#333",
+          color: "white",
+          fontSize: "16px",
+          outline: "none", // Убираем стандартную обводку
+    
+        }}
+        onFocus={(e) => (e.target.style.border = "2px solid #4B0082")}
+        onBlur={(e) => (e.target.style.border = "none")} />
 
         <button type="submit" style={{
-          width: "110%",
-          padding: "12px",
-          borderRadius: "5px",
-          border: "none",
-          marginBottom: "10px",
-          backgroundColor: "white",
-          color: "#4682B4",
-          fontSize: "18px",
-          cursor: "pointer"
+           width: "100%",
+           padding: "12px",
+           borderRadius: "5px",
+           border: "none",
+           backgroundColor: "#151719",
+           color: "#4B0082",
+           fontSize: "22px",
+           cursor: "pointer",
         }}>
           Войти
         </button>
+
+        {/* Ссылка для восстановления пароля */}
+        <Link to="/forgot-password" style={{
+          textDecoration: "none",
+          color: "#ffffff",
+          fontSize: "16px",
+          marginTop: "5px",
+          cursor: "pointer",
+          transition: "color 0.3s"
+        }}>
+          Забыли пароль?
+        </Link>
 
         {/* Кнопка для перехода на страницу регистрации */}
         <Link to="/register" style={{

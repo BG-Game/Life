@@ -1,0 +1,10 @@
+.PhoneInputInput{
+    background-color: #333;
+    outline: none;
+    border: none;
+    color: #ffffff;
+}
+
+.PhoneInput:focus {
+    border: 2px solid #4B0082; /* Фиолетовая обводка при фокусе */
+  }
