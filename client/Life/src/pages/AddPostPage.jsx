@@ -1,7 +1,13 @@
+import '../ChatPage.css'
 
-
-export const AddPostPage = () => {
+const AddPostPage = () => {
   return (
-    <div>AddPostPage</div>
-  )
-}
+    <div className="chat-page-container"> {/* Обертываем все в контейнер */}
+      <h1>Ну может еще че-то</h1>
+      {/* Добавь здесь весь контент страницы чата */}
+      <p>Та придумаем че запихнуть</p>
+    </div>
+  );
+};
+
+export default AddPostPage;

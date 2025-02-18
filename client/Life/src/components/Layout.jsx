@@ -1,12 +1,14 @@
-
-import Navbar from '../components/Navbar';
-import { Outlet } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
+import Navbar from "./Navbar";
+import "../App.css";
 
 export const Layout = () => {
   return (
-    <div className='container'>
+    <div className="app-container">
       <Navbar />
-      <Outlet /> {/* Контент будет рендериться сюда */}
+      <div className="main-content">
+        <Outlet />
+      </div>
     </div>
   );
 };
